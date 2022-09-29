@@ -7,7 +7,6 @@ database = [{"mid": 1, "year": 2013, "title": "Rush"},
 
 last_mid = 2
 
- 
 
 @app.route('/movie')
 def list_movie():
@@ -62,6 +61,7 @@ def update_movie(mid):
     database.insert(index, mov)
     return jsonify(mov)
 
+
 @app.route('/movie/<mid>', methods=['DELETE'])
 def delete_movie(mid):
     index = 0
@@ -71,7 +71,6 @@ def delete_movie(mid):
             break
         index += 1
     return jsonify({'msg': f'Movie with id {mid} deleted successfully'})
-
 
 
 app.run(debug=True)
